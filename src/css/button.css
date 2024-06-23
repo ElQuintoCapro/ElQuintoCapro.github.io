@@ -1,0 +1,13 @@
+button {
+  background-color: var(--brown);
+  color: var(--gold);
+  cursor: pointer;
+  border: solid 1px var(--gold);
+  font-weight: 800;
+  padding: 10px 25px;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}

@@ -1,0 +1,470 @@
+{
+  "startScene": "loading",
+  "scenes": {
+    "loading": {
+      "nextScene": "menu"
+    },
+    "menu": {
+      "nextScene": "inGame"
+    },
+    "inGame": {
+      "prevScene": "menu",
+      "caracters": {
+        "ordenador": {
+          "color": "#001123",
+          "name": "Ordenador",
+          "picture": "<img src=\"./public/images/caracters/ordenador.jpg\" style=\"position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); object-fit: cover;\" />"
+        },
+        "miguel": {
+          "color": "#00000",
+          "name": "miguel",
+          "picture": "<img src=\"./public/images/caracters/miguel.svg\" style=\"bottom: 0; width: 280px; background-color: white\" />"
+        },
+        "alex": {
+          "color": "var(--orange)",
+          "name": "Alex Oller",
+          "picture": "<img src=\"./public/images/caracters/alex.jpg\" style=\"bottom: 0; width: 280px\" />"
+        },
+        "yuli": {
+          "color": "#82B544",
+          "name": "yuli",
+          "picture": "<img src=\"./public/images/caracters/yuli.svg\" style=\"bottom: 0; width: 280px\" />"
+        },
+        "producer": {
+          "color": "#245EA7",
+          "name": "producer",
+          "picture": "<img src=\"./public/images/caracters/producer.svg\" style=\"bottom: 0; width: 280px\" />"
+        },
+        "lucas": {
+          "color": "var(--darkGold)",
+          "name": "Lord Lucas",
+          "picture": "<img src=\"./public/images/caracters/lucas.svg\" style=\"bottom: 0; width: 280px\" />"
+        },
+        "fans": {
+          "color": "var(--dirtBrown)",
+          "name": "capro Fans",
+          "picture": "<img src=\"./public/images/caracters/fans.png\" style=\"bottom: 0; width: 280px\" />"
+        },
+        "doctor": {
+          "color": "var(--dirtBrown)",
+          "name": "Doctor xavi bam",
+          "picture": "<img src=\"./public/images/caracters/doctor.svg\" style=\"bottom: 0; width: 280px\" />"
+        }
+      },
+      "scenarios": [
+        {
+          "startState": "intro",
+          "intro": {
+            "type": "event",
+            "caracter": "ordenador",
+            "question": "Tienes un mensaje nuevo...",
+            "option1": {
+              "value": "Que sera?",
+              "next": "introSuccessor"
+            },
+            "option2": {
+              "value": "Lol, spam!",
+              "next": "introSuccessor"
+            }
+          },
+          "introSuccessor": {
+            "type": "event",
+            "question": "Hola somos los Capros! y queremos que toques con nosotros!",
+            "caracter": "ordenador",
+            "option1": {
+              "value": "Leer mas",
+              "next": "introCharge"
+            },
+            "option2": {
+              "value": "Que palo...",
+              "next": "introCharge"
+            }
+          },
+          "introCharge": {
+            "type": "event",
+            "question": "Venga animate a probar un ensayo con nosotros! necesitamos tu ayuda para llegar al estrellazo!",
+            "caracter": "ordenador",
+            "option1": {
+              "value": "Yeah!",
+              "next": "introGameplay"
+            },
+            "option2": {
+              "value": "lo intentare..",
+              "next": "introGameplay"
+            }
+          },
+          "introGameplay": {
+            "type": "event",
+            "question": "Solo intenta mantener en equilibro los 4 pilares de abajo y todo ira bien!",
+            "caracter": "ordenador",
+            "option1": {
+              "value": "Sí",
+              "nextScenario": true
+            },
+            "option2": {
+              "value": "a tope!",
+              "nextScenario": true
+            }
+          }
+        },
+        {
+          "startState": "legitimacy",
+          "legitimacy": {
+            "type": "event",
+            "question": "<span class=\"small-description\">Bienvenido a Capros, <br/><br/>Ya te has aprendido nuestros temas?.<span>",
+            "caracter": "miguel",
+            "option1": {
+              "value": "Si mi amo",
+              "action": {
+                "updateScore": {
+                  "people": 5,
+                  "noble": 5
+                }
+              },
+              "next": "earthquake"
+            },
+            "option2": {
+              "value": "Suerte",
+              "action": {
+                "updateScore": {
+                  "people": -10,
+                  "noble": -35
+                }
+              },
+              "next": "earthquake"
+            }
+          },
+          "earthquake": {
+            "type": "event",
+            "question": "<span class=\"small-description\">Tenemos un bolo mañana! Pero no estoy seguro si estamos preparados..<span>",
+            "caracter": "alex",
+            "option1": {
+              "value": "A por el bolo! a pelo!",
+              "action": {
+                "updateScore": {
+                  "loyalty": 20,
+                  "people": 15,
+                  "noble": 15,
+                  "money": -20
+                }
+              },
+              "next": "plague"
+            },
+            "option2": {
+              "value": "Mejor ensayar mas..",
+              "action": {
+                "updateScore": {
+                  "army": 5,
+                  "loyalty": -5,
+                  "people": -20,
+                  "noble": -15,
+                  "money": 15
+                }
+              },
+              "next": "plague"
+            }
+          },
+          "plague": {
+            "type": "event",
+            "question": "<span class=\"small-description\">hey sexy!, <br/><br/>Quieres salir conmigo?.<span>",
+            "caracter": "yuli",
+            "option1": {
+              "value": "full support",
+              "action": {
+                "updateScore": {
+                  "loyalty": 10,
+                  "people": 10,
+                  "money": -20
+                }
+              },
+              "next": "visitmiguelDialogue1"
+            },
+            "option2": {
+              "value": "Suerte",
+              "action": {
+                "updateScore": {
+                  "loyalty": -20,
+                  "people": -20,
+                  "noble": -15,
+                  "money": 20
+                }
+              },
+              "next": "visitmiguelDialogue1"
+            }
+          },
+          "visitmiguelDialogue1": {
+            "type": "event",
+            "question": "<span class=\"tiny-description\">nuevo capro, <br/><br/>nos vamos de gira! tendras que dejar a tu novia y tu familia.<span>",
+            "caracter": "producer",
+            "option1": {
+              "value": "Vale",
+              "next": "visitmiguelDialogue2"
+            },
+            "option2": {
+              "value": "Cancela la gira!",
+              "action": {
+                "updateScore": {
+                  "army": -30,
+                  "loyalty": -5,
+                  "noble": -35,
+                  "money": -20,
+                  "people": -10
+                }
+              },
+              "next": "armyNeedSolider"
+            }
+          },
+          "visitmiguelDialogue2": {
+            "type": "info",
+            "question": "<span class=\"tiny-description\">Enhorabuena quinto capro!, <br/><br/>La gira ha sido todo un exito y tenemos pasta! que hacer con tanto dinero?<span>",
+            "caracter": "producer",
+            "option": {
+              "value": "Grabar",
+              "next": "visitmiguelDialogue3"
+            }
+          },
+          "visitmiguelDialogue3": {
+            "type": "info",
+            "question": "<span class=\"tiny-description\">quinto capro, <br/><br/>que quieres hacer con la pasta?<span>",
+            "caracter": "producer",
+            "option": {
+              "value": "Drogas y alcohol",
+              "next": "visitmiguel"
+            }
+          },
+          "visitmiguel": {
+            "type": "event",
+            "question": "<span class=\"small-description\">Estas jodido<span>",
+            "caracter": "miguel",
+            "option1": {
+              "value": "Si",
+              "action": {
+                "updateScore": {
+                  "army": 10,
+                  "noble": 10,
+                  "money": -10
+                }
+              },
+              "next": "armyNeedSolider"
+            },
+            "option2": {
+              "value": "No",
+              "action": {
+                "updateScore": {
+                  "noble": -15,
+                  "money": 0
+                }
+              },
+              "next": "armyNeedSolider"
+            }
+          },
+          "armyNeedSolider": {
+            "type": "event",
+            "question": "<span><br/><br/>La cosa se esta llendo de las manos, dejo el grupo! estoy harto!<span>",
+            "caracter": "alex",
+            "option1": {
+              "value": "Que te jodan!",
+              "action": {
+                "updateScore": {
+                  "army": 10,
+                  "people": -20,
+                  "money": -20
+                }
+              },
+              "next": "peasantHarvest"
+            },
+            "option2": {
+              "value": "No te vayas!",
+              "action": {
+                "updateScore": {
+                  "army": -30,
+                  "loyalty": -5,
+                  "money": 20
+                }
+              },
+              "next": "peasantHarvest"
+            }
+          },
+          "peasantHarvest": {
+            "type": "event",
+            "question": "<span><br/><br/>Los fans os adoran!<span>",
+            "caracter": "fans",
+            "option1": {
+              "value": "grabar album",
+              "action": {
+                "updateScore": {
+                  "army": 15,
+                  "people": 5,
+                  "money": 5,
+                  "loyalty": 5,
+                  "noble": 5
+                }
+              },
+              "next": "lucas"
+            },
+            "option2": {
+              "value": "Ir de gira",
+              "action": {
+                "updateScore": {
+                  "army": 15,
+                  "people": -10,
+                  "noble": -10,
+                  "loyalty": -10,
+                  "money": -5
+                }
+              },
+              "next": "lucas"
+            }
+          },
+          "lucas": {
+            "type": "event",
+            "question": "<span><br/><br/>vamos al jamboree en vez de ensayo?<span>",
+            "caracter": "noble",
+            "option1": {
+              "value": "Si",
+              "next": "peasantSufferedHunt"
+            },
+            "option2": {
+              "value": "No",
+              "next": ""
+            }
+          },
+          "peasantSufferedHunt": {
+            "type": "event",
+            "question": "<span><br/><br/>estas sangrando<span>",
+            "caracter": "people",
+            "option1": {
+              "value": "llamar doctor",
+              "action": {
+                "updateScore": {
+                  "people": -5,
+                  "money": -15,
+                  "loyalty": 5,
+                  "noble": -5
+                }
+              },
+              "next": "doctorDeath"
+            },
+            "option2": {
+              "value": "suda",
+              "action": {
+                "updateScore": {
+                  "army": -5,
+                  "people": -5,
+                  "noble": -5,
+                  "loyalty": -10,
+                  "money": 15
+                }
+              }
+            }
+          },
+          "doctorDeath": {
+            "type": "event",
+            "question": "<span><br/><br/>Muerte por salud.<span>",
+            "caracter": "doctor",
+            "option1": {
+              "value": "Que...",
+              "next": "gangrene"
+            },
+            "option2": {
+              "value": "que...",
+              "next": "gangrene"
+            }
+          },
+          "gangrene": {
+            "type": "info",
+            "question": "<span>el grupo se separa</span>",
+            "picture": "<img src=\"./public/images/caracters/dead.svg\" style=\"top: 0; bottom: 0; width: 280px\" />",
+            "color": "#231100",
+            "option": {
+              "value": "Continua",
+              "action": {
+                "loose": true
+              }
+            }
+          }
+        },
+        {
+          "win": {
+            "type": "info",
+            "question": "<span>exito de capros.</span>",
+            "picture": "<img src=\"./public/images/caracters/miguel.svg\" style=\"top: 0; height: 95%\" />",
+            "color": "#231100",
+            "option": {
+              "value": "Hecho!",
+              "action": {
+                "win": true
+              }
+            }
+          },
+          "plague": {
+            "type": "info",
+            "question": "<span>fracaso musical</span>",
+            "picture": "<img src=\"./public/images/caracters/dead.svg\" style=\"top: 0; height: 95%\" />",
+            "color": "#231100",
+            "option": {
+              "value": "lol",
+              "action": {
+                "loose": true
+              }
+            }
+          },
+          "alone": {
+            "type": "info",
+            "question": "<span>te quedas sin dinero</span>",
+            "picture": "<img src=\"./public/images/caracters/dead.svg\" style=\"top: 0; 230px\" />",
+            "color": "#231100",
+            "option": {
+              "value": "mierda..",
+              "action": {
+                "loose": true
+              }
+            }
+          },
+          "money": {
+            "type": "info",
+            "question": "<span>te quedas sin dinero.</span>",
+            "picture": "<img src=\"./public/images/caracters/dead.svg\" style=\"top: 0; height: 95%\" />",
+            "color": "#231100",
+            "option": {
+              "value": "mierda..",
+              "action": {
+                "loose": true
+              }
+            }
+          },
+          "army": {
+            "type": "info",
+            "question": "<span>muerto.</span>",
+            "picture": "<img src=\"./public/images/caracters/dead.svg\" style=\"top: 0; height: 95%\" />",
+            "color": "#231100",
+            "option": {
+              "value": "mierda..",
+              "action": {
+                "loose": true
+              }
+            }
+          },
+          "loyalty": {
+            "type": "info",
+            "question": "<span>Your demise arrives, abandoned by the layout like a lost tourist in a maze of bad graphic design. Looks like even your migueldom's pixels have rebelled!</span>",
+            "picture": "<img src=\"./public/images/caracters/dead.svg\" style=\"top: 0; height: 95%\" />",
+            "color": "#231100",
+            "option": {
+              "value": "Done",
+              "action": {
+                "loose": true
+              }
+            }
+          }
+        }
+      ]
+    },
+    "dead": {
+      "nextScene": "menu"
+    },
+    "win": {
+      "nextScene": "menu"
+    }
+  }
+}

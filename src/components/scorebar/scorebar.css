@@ -1,0 +1,35 @@
+#army__mask,
+#loyalty__mask,
+#money__mask,
+#noble__mask,
+#people__mask {
+  transition: .45s
+}
+
+#scorebar {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  padding-bottom: 15px;
+  gap: 5px;
+}
+
+#scorebar>div {
+  position: relative;
+}
+
+.game__card_footer_score {
+  position: absolute;
+  visibility: hidden;
+  transition: .25s;
+  top: 35px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: var(--gold);
+  border-radius: 50px;
+}
+
+.scorebar__bull_on {
+  visibility: visible;
+}

@@ -1,0 +1,109 @@
+#game-page {
+  background-image: url("../../../public/images/menu.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#game__card {
+  background-color: var(--gold);
+  width: 450px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  #game__card {
+    width: 100%;
+  }
+
+  #game__caracter_card {
+    width: 90% !important;
+  }
+
+  #game__caracter_card>img {
+    max-width: 200px;
+  }
+
+  #game__card_footer {
+    justify-content: space-between !important;
+  }
+
+  #game__question>span {
+    font-size: 12px;
+  }
+}
+
+#game__card__header {
+  background-color: var(--brown);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 100%;
+  padding: 20px 20px;
+}
+
+#game__question {
+  color: var(--gold)
+}
+
+#game__caracter_card {
+  background-color: #1C2F53;
+  border-radius: 25px;
+  padding-bottom: 0;
+  width: 350px;
+  height: 350px;
+  margin-top: 40px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#game__caracter_name {
+  margin-top: 30px;
+}
+
+#game__caracter_card>span {
+  color: var(--gold);
+  text-align: center;
+}
+
+#game__caracter_card>img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+#game__card_buttons {
+  padding: 40px;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+#game__card_buttons>button {
+  padding: 20px 15px;
+  flex: 1;
+}
+
+.tiny-description {
+  font-size: 12px;
+}
+
+.small-description {
+  font-size: 14px;
+}
+
+#game__card_footer {
+  background-color: var(--brown);
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  align-items: center;
+}
