@@ -13,42 +13,42 @@
         "ordenador": {
           "color": "#001123",
           "name": "Ordenador",
-          "picture": "<img src=\"./public/images/caracters/ordenador.jpg\" style=\"position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); object-fit: cover;\" />"
+          "picture": "<img src=\"./public/images/caracters/ordenador.jpg\" style=\"bottom: 0; width: 100%; background-color: white\" />"
         },
         "miguel": {
           "color": "#00000",
-          "name": "miguel",
-          "picture": "<img src=\"./public/images/caracters/miguel.svg\" style=\"bottom: 0; width: 280px; background-color: white\" />"
+          "name": "Miguel",
+          "picture": "<img src=\"./public/images/caracters/miguel.jpg\" style=\"bottom: 0; width: 100%; background-color: white\" />"
         },
         "alex": {
           "color": "var(--orange)",
           "name": "Alex Oller",
-          "picture": "<img src=\"./public/images/caracters/alex.jpg\" style=\"bottom: 0; width: 280px\" />"
+          "picture": "<img src=\"./public/images/caracters/alex.jpg\" style=\"bottom: 0; width: 100%\" />"
         },
         "yuli": {
           "color": "#82B544",
           "name": "yuli",
-          "picture": "<img src=\"./public/images/caracters/yuli.svg\" style=\"bottom: 0; width: 280px\" />"
+          "picture": "<img src=\"./public/images/caracters/yuli.svg\" style=\"bottom: 0; width: 100%\" />"
         },
         "producer": {
           "color": "#245EA7",
           "name": "producer",
-          "picture": "<img src=\"./public/images/caracters/producer.svg\" style=\"bottom: 0; width: 280px\" />"
+          "picture": "<img src=\"./public/images/caracters/producer.svg\" style=\"bottom: 0; width: 100%\" />"
         },
         "lucas": {
           "color": "var(--darkGold)",
           "name": "Lord Lucas",
-          "picture": "<img src=\"./public/images/caracters/lucas.svg\" style=\"bottom: 0; width: 280px\" />"
+          "picture": "<img src=\"./public/images/caracters/lucas.jpg\" style=\"bottom: 0; width: 100%\" />"
         },
         "fans": {
           "color": "var(--dirtBrown)",
           "name": "capro Fans",
-          "picture": "<img src=\"./public/images/caracters/fans.png\" style=\"bottom: 0; width: 280px\" />"
+          "picture": "<img src=\"./public/images/caracters/fans.png\" style=\"bottom: 0; width: 100%\" />"
         },
         "doctor": {
           "color": "var(--dirtBrown)",
           "name": "Doctor xavi bam",
-          "picture": "<img src=\"./public/images/caracters/doctor.svg\" style=\"bottom: 0; width: 280px\" />"
+          "picture": "<img src=\"./public/images/caracters/doctor.svg\" style=\"bottom: 0; width: 100%\" />"
         }
       },
       "scenarios": [
@@ -374,7 +374,7 @@
           "gangrene": {
             "type": "info",
             "question": "<span>el grupo se separa</span>",
-            "picture": "<img src=\"./public/images/caracters/dead.svg\" style=\"top: 0; bottom: 0; width: 280px\" />",
+            "picture": "<img src=\"./public/images/caracters/dead.svg\" style=\"top: 0; bottom: 0; width: 100%\" />",
             "color": "#231100",
             "option": {
               "value": "Continua",

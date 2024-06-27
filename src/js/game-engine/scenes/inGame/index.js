@@ -12,7 +12,7 @@ class GameSenario {
     this.currentEventName = this.scenario.startState;
     this.currentEvent = this.scenario[this.scenario.startState];
     this.onChangeScene = onChangeScene
-    this.scores = { army: 50, loyalty: 50, money: 50, noble: 50, people: 50 };
+    this.scores = { heart: 50, personal: 50, money: 50, music: 50 };
     this.stimCount = 0;
     this.dopeCount = 0;
   }
@@ -32,28 +32,21 @@ class GameSenario {
         Object.entries(option).map(([key, value]) => {
           const bull = document.getElementById(`game__card_footer_${key}`);
 
-          bull.classList.add("scorebar__bull_on");
-          switch (true) {
-            case Math.abs(value) >= 20:
-              bull.style = "width: 16px; height: 16px;";
-              break;
-            case Math.abs(value) >= 15:
-              bull.style = "width: 12px; height: 12px;";
-              break;
-            case Math.abs(value) >= 10:
-              bull.style = "width: 8px; height: 8px;";
-              break;
-            case Math.abs(value) >= 5:
-              bull.style = "width: 4px; height: 4px;";
-              break;
-          }
+          // Create a span element to show the score change
+          const scoreSpan = document.createElement("span");
+          scoreSpan.classList.add("score_change");
+          scoreSpan.textContent = value > 0 ? `+${value}` : `${value}`;
+          
+          // Append the score change span to the footer element
+          footerElement.appendChild(scoreSpan);
         });
       });
-      button.addEventListener("mouseleave", () =>
-        [...document.getElementsByClassName("scorebar__bull_on")].forEach((bull) => {
-          bull.classList.remove("scorebar__bull_on");
-          bull.style = "width: 0px; height: 0px";
-        }))
+      button.addEventListener("mouseleave", () => {
+        [...document.getElementsByClassName("score_change")].forEach((span) => {
+          span.remove();
+        });
+      });
+        
     });
 
   }
@@ -69,20 +62,17 @@ class GameSenario {
     });
 
     switch (true) {
-      case this.scores.noble <= 0:
+      case this.scores.heart <= 0:
         this.nextScenario(2, "plague");
         return false;
-      case this.scores.people <= 0:
+      case this.scores.personal <= 0:
         this.nextScenario(2, "alone")
         return false;
-      case this.scores.army <= 0:
+      case this.scores.money <= 0:
         this.nextScenario(2, "army");
         return false;
-      case this.scores.money <= 0:
+      case this.scores.music <= 0:
         this.nextScenario(2, "money");
-        return false;
-      case this.scores.loyalty <= 0:
-        this.nextScenario(2, "loyalty");
         return false;
     }
 

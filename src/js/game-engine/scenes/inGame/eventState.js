@@ -6,7 +6,7 @@ const eventState = ({ currentEvent, ...event }) => {
 
   document.getElementById("game__card_buttons").children.item(1).style = "display: block";
   document.getElementById("game__question").innerHTML = currentEvent.question;
-  document.getElementById("game__caracter_card").innerHTML = event.caracters[currentEvent.caracter].picture ?? "<img src=\"./public/images/caracters/king.svg\" style=\"bottom: 0; width: 280px\" />";
+  document.getElementById("game__caracter_card").innerHTML = event.caracters[currentEvent.caracter].picture ?? "<img src=\"./public/images/caracters/miguel.jpg\" style=\"bottom: 0; width: 100%\" />";
   document.getElementById("game__caracter_card").style = `background-color: ${event.caracters[currentEvent.caracter].color}`;
   document.getElementById("game__caracter_name").innerText = event.caracters[currentEvent.caracter].name;
 

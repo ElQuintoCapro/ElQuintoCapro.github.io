@@ -20,14 +20,6 @@
     width: 100%;
   }
 
-  #game__caracter_card {
-    width: 90% !important;
-  }
-
-  #game__caracter_card>img {
-    max-width: 200px;
-  }
-
   #game__card_footer {
     justify-content: space-between !important;
   }
@@ -55,8 +47,9 @@
   background-color: #1C2F53;
   border-radius: 25px;
   padding-bottom: 0;
-  width: 350px;
-  height: 350px;
+  height: 100%;
+  margin: 0 20px;
+  aspect-ratio: 1/1;
   margin-top: 40px;
   position: relative;
   overflow: hidden;
@@ -75,7 +68,6 @@
 }
 
 #game__caracter_card>img {
-  position: absolute;
   left: 0;
   right: 0;
   margin: auto;
