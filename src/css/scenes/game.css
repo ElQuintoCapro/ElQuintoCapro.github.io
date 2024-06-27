@@ -36,7 +36,7 @@
   align-items: center;
   height: 150px;
   width: 100%;
-  padding: 20px 20px;
+  padding: 20px 10px;
 }
 
 #game__question {
@@ -59,7 +59,7 @@
 }
 
 #game__caracter_name {
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 #game__caracter_card>span {

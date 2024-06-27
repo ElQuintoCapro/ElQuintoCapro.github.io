@@ -25,10 +25,10 @@
           "name": "Alex Oller",
           "picture": "<img src=\"./public/images/caracters/alex.jpg\" style=\"bottom: 0; width: 100%\" />"
         },
-        "yuli": {
+        "ivan": {
           "color": "#82B544",
-          "name": "yuli",
-          "picture": "<img src=\"./public/images/caracters/yuli.svg\" style=\"bottom: 0; width: 100%\" />"
+          "name": "ivan",
+          "picture": "<img src=\"./public/images/caracters/ivan.jpg\" style=\"top: 0; height: 100%\" />"
         },
         "producer": {
           "color": "#245EA7",
@@ -93,19 +93,6 @@
               "next": "startDeath"
             }
           },
-          "introGameplay": {
-            "type": "event",
-            "question": "Solo intenta mantener en equilibro los 4 pilares de abajo y todo ira bien!",
-            "caracter": "ordenador",
-            "option1": {
-              "value": "Sí",
-              "nextScenario": true
-            },
-            "option2": {
-              "value": "a tope!",
-              "nextScenario": true
-            }
-          },
           "startDeath": {
             "type": "info",
             "question": "<span>Te levantas por la mañana, te juegas unos lols desayunando patatas fritas y desaprovechas tu vida. Llegas a mayor y no has hecho nada productivo. Mueres en el olvido. No has hecho historia</span>",
@@ -161,37 +148,28 @@
           },
           "welcomeAlex": {
             "type": "event",
-            "question": "<span>text alex.<span>",
+            "question": "<span>Soy el batería de los Capros. Intenta mantener la calidad musical pero sin gastar demasiado dinero. Molaría que el grupo sea rentable, pero que sonara de puta madre.<span>",
             "caracter": "alex",
             "option1": {
-              "value": "1",
-              "next": "visitmiguelDialogue1"
+              "value": "Sonara que flipas",
+              "next": "welcomeIvan"
             },
             "option2": {
-              "value": "2",
-              "next": "visitmiguelDialogue1"
+              "value": "Nos vamos a forrar",
+              "next": "welcomeIvan"
             }
           },
-          "visitmiguelDialogue1": {
+          "welcomeIvan": {
             "type": "event",
-            "question": "<span class=\"tiny-description\">nuevo capro, <br/><br/>nos vamos de gira! tendras que dejar a tu novia y tu familia.<span>",
+            "question": "<span Soy el bajista de la banda. Asegurate de mantener a la banda unida y que no haya malos rollos internos. Tambien tomate un respiro de vez en cuando con tu vida personal para que no te agobies.<span>",
             "caracter": "ivan",
             "option1": {
-              "value": "Vale",
-              "next": "visitmiguelDialogue2"
+              "value": "Nos harmeos usper colegas",
+              "randomNext": ["visitmiguelDialogue2", "opvisitmiguelDialogue3", "visitmiguel"]
             },
             "option2": {
-              "value": "Cancela la gira!",
-              "action": {
-                "updateScore": {
-                  "army": -30,
-                  "loyalty": -5,
-                  "noble": -35,
-                  "money": -20,
-                  "people": -10
-                }
-              },
-              "next": "armyNeedSolider"
+              "value": "Me lo tomare con calma",
+              "randomNext": ["visitmiguelDialogue2", "visitmiguelDialogue3", "visitmiguel"]
             }
           },
           "visitmiguelDialogue2": {
