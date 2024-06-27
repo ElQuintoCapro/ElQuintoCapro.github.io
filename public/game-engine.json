@@ -69,7 +69,7 @@
           },
           "introSuccessor": {
             "type": "event",
-            "question": "Hola somos los Capros! y queremos que toques con nosotros!",
+            "question": "¡Enhorabuena, has sido seleccionado para formar parte de la banda de los Capros!",
             "caracter": "ordenador",
             "option1": {
               "value": "Leer mas",
@@ -82,15 +82,15 @@
           },
           "introCharge": {
             "type": "event",
-            "question": "Venga animate a probar un ensayo con nosotros! necesitamos tu ayuda para llegar al estrellazo!",
+            "question": "Quedamos mañana en el local de ensayo para que puedas conocer a toda la banda.",
             "caracter": "ordenador",
             "option1": {
-              "value": "Yeah!",
-              "next": "introGameplay"
+              "value": "¡Genial! Allí estaré",
+              "nextScenario": true
             },
             "option2": {
-              "value": "lo intentare..",
-              "next": "introGameplay"
+              "value": "Mejor me quedo en casa de chil",
+              "next": "startDeath"
             }
           },
           "introGameplay": {
@@ -105,97 +105,77 @@
               "value": "a tope!",
               "nextScenario": true
             }
+          },
+          "startDeath": {
+            "type": "info",
+            "question": "<span>Te levantas por la mañana, te juegas unos lols desayunando patatas fritas y desaprovechas tu vida. Llegas a mayor y no has hecho nada productivo. Mueres en el olvido. No has hecho historia</span>",
+            "picture": "<img src=\"./public/images/caracters/ivan.jpg\" style=\"top: 0; height: 100%\" />",
+            "color": "#231100",
+            "option": {
+              "value": "Done",
+              "action": {
+                "loose": true
+              }
+            }
           }
         },
         {
-          "startState": "legitimacy",
-          "legitimacy": {
+          "startState": "welcomeMiguel",
+          "welcomeMiguel": {
             "type": "event",
-            "question": "<span class=\"small-description\">Bienvenido a Capros, <br/><br/>Ya te has aprendido nuestros temas?.<span>",
+            "question": "<span>Bienvenido a Capros, <br/>Bienvenido a los Capros. Soy el guitarrista de la banda. Ahora mismo no somos muy conocidos, pero contigo, ¡haremos historia!.<span>",
             "caracter": "miguel",
             "option1": {
-              "value": "Si mi amo",
+              "value": "Pues claro!",
               "action": {
                 "updateScore": {
                   "people": 5,
                   "noble": 5
                 }
               },
-              "next": "earthquake"
+              "next": "welcomeLucas"
             },
             "option2": {
-              "value": "Suerte",
+              "value": "Si tu lo dices..",
               "action": {
                 "updateScore": {
                   "people": -10,
                   "noble": -35
                 }
               },
-              "next": "earthquake"
+              "next": "welcomeLucas"
             }
           },
-          "earthquake": {
+          "welcomeLucas": {
             "type": "event",
-            "question": "<span class=\"small-description\">Tenemos un bolo mañana! Pero no estoy seguro si estamos preparados..<span>",
-            "caracter": "alex",
+            "question": "<span>¡Buenas! Yo soy el guitarrista solista. Tú serás el cantante y la imagen principal de la banda y, por lo tanto, te encargarás de tomar todas las decisiones.<span>",           
+            "caracter": "lucas",
             "option1": {
-              "value": "A por el bolo! a pelo!",
-              "action": {
-                "updateScore": {
-                  "loyalty": 20,
-                  "people": 15,
-                  "noble": 15,
-                  "money": -20
-                }
-              },
-              "next": "plague"
+              "value": "Podeis confiar en mi",
+              "next": "welcomeAlex"
             },
             "option2": {
-              "value": "Mejor ensayar mas..",
-              "action": {
-                "updateScore": {
-                  "army": 5,
-                  "loyalty": -5,
-                  "people": -20,
-                  "noble": -15,
-                  "money": 15
-                }
-              },
-              "next": "plague"
+              "value": "Cuanto curro",
+              "next": "welcomeAlex"
             }
           },
-          "plague": {
+          "welcomeAlex": {
             "type": "event",
-            "question": "<span class=\"small-description\">hey sexy!, <br/><br/>Quieres salir conmigo?.<span>",
-            "caracter": "yuli",
+            "question": "<span>text alex.<span>",
+            "caracter": "alex",
             "option1": {
-              "value": "full support",
-              "action": {
-                "updateScore": {
-                  "loyalty": 10,
-                  "people": 10,
-                  "money": -20
-                }
-              },
+              "value": "1",
               "next": "visitmiguelDialogue1"
             },
             "option2": {
-              "value": "Suerte",
-              "action": {
-                "updateScore": {
-                  "loyalty": -20,
-                  "people": -20,
-                  "noble": -15,
-                  "money": 20
-                }
-              },
+              "value": "2",
               "next": "visitmiguelDialogue1"
             }
           },
           "visitmiguelDialogue1": {
             "type": "event",
             "question": "<span class=\"tiny-description\">nuevo capro, <br/><br/>nos vamos de gira! tendras que dejar a tu novia y tu familia.<span>",
-            "caracter": "producer",
+            "caracter": "ivan",
             "option1": {
               "value": "Vale",
               "next": "visitmiguelDialogue2"
@@ -440,18 +420,6 @@
             "color": "#231100",
             "option": {
               "value": "mierda..",
-              "action": {
-                "loose": true
-              }
-            }
-          },
-          "loyalty": {
-            "type": "info",
-            "question": "<span>Your demise arrives, abandoned by the layout like a lost tourist in a maze of bad graphic design. Looks like even your migueldom's pixels have rebelled!</span>",
-            "picture": "<img src=\"./public/images/caracters/dead.svg\" style=\"top: 0; height: 95%\" />",
-            "color": "#231100",
-            "option": {
-              "value": "Done",
               "action": {
                 "loose": true
               }
