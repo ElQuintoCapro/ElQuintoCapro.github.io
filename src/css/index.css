@@ -110,6 +110,17 @@ main {
   width: 100%;
 }
 
+.icon-explanation {
+  display: flex;
+  align-items: center; /* This will vertically center the icon with the text */
+  gap: 5px !important; /* Adjust the space between the icon and the text */
+  height: 30px;
+}
+
+.icon-explanation h2 {
+  margin: 0; /* Removes default margin from h2 to avoid unnecessary spacing */
+}
+
 .page {
   width: 100%;
   height: 100%;
@@ -160,9 +171,6 @@ main {
   color: var(--gold);
 }
 
-.fa.solid {
-  width: 20px;
-  text-align: center;
-}
+
 
 

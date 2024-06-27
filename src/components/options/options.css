@@ -42,3 +42,8 @@
 .icon-explanation h2 {
   margin: 0; /* Removes default margin from h2 to avoid unnecessary spacing */
 }
+
+.fa-solid {
+  width: 20px;
+  text-align: center;
+}
