@@ -35,7 +35,8 @@
 .icon-explanation {
   display: flex;
   align-items: center; /* This will vertically center the icon with the text */
-  gap: 10px; /* Adjust the space between the icon and the text */
+  gap: 5px !important; /* Adjust the space between the icon and the text */
+  height: 30px;
 }
 
 .icon-explanation h2 {
