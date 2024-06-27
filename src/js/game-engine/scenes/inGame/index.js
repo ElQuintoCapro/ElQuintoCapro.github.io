@@ -32,21 +32,28 @@ class GameSenario {
         Object.entries(option).map(([key, value]) => {
           const bull = document.getElementById(`game__card_footer_${key}`);
 
-          // Create a span element to show the score change
-          const scoreSpan = document.createElement("span");
-          scoreSpan.classList.add("score_change");
-          scoreSpan.textContent = value > 0 ? `+${value}` : `${value}`;
-          
-          // Append the score change span to the footer element
-          footerElement.appendChild(scoreSpan);
+          bull.classList.add("scorebar__bull_on");
+          switch (true) {
+            case Math.abs(value) >= 20:
+              bull.style = "width: 16px; height: 16px;";
+              break;
+            case Math.abs(value) >= 15:
+              bull.style = "width: 12px; height: 12px;";
+              break;
+            case Math.abs(value) >= 10:
+              bull.style = "width: 8px; height: 8px;";
+              break;
+            case Math.abs(value) >= 5:
+              bull.style = "width: 4px; height: 4px;";
+              break;
+          }
         });
       });
-      button.addEventListener("mouseleave", () => {
-        [...document.getElementsByClassName("score_change")].forEach((span) => {
-          span.remove();
-        });
-      });
-        
+      button.addEventListener("mouseleave", () =>
+        [...document.getElementsByClassName("scorebar__bull_on")].forEach((bull) => {
+          bull.classList.remove("scorebar__bull_on");
+          bull.style = "width: 0px; height: 0px";
+        }))
     });
 
   }
@@ -73,6 +80,9 @@ class GameSenario {
         return false;
       case this.scores.music <= 0:
         this.nextScenario(2, "money");
+        return false;
+      case this.scores.loyalty <= 0:
+        this.nextScenario(2, "loyalty");
         return false;
     }
 
