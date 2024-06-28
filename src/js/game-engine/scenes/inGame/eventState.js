@@ -21,7 +21,7 @@ const eventState = ({ currentEvent, ...event }) => {
           return;
       if (choice.object.action?.loose) return event.onLoss()
       if (choice.object.nextScenario) return event.nextScenario();
-      if (choice.object.randomNext) return event.randomNext(choice.object.randomNext)
+      if (choice.object.randomNext) return event.randomNextEvent(choice.object.randomNext)
       else
       return event.nextEvent(choice.object.next)
     }, { signal: abortController.signal });
