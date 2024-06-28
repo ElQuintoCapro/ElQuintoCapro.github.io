@@ -92,16 +92,14 @@ class GameSenario {
   event = () => eventState(this)
   info = () => infoState(this)
 
-  getNextEventName = (option) => {
-    if (option.randomNext) {
-      const randomIndex = Math.floor(Math.random() * option.randomNext.length);
-      return option.randomNext[randomIndex];
+  randomNextEvent = (randomNext) => {
+    if (randomNext) {
+      const randomIndex = Math.floor(Math.random() * randomNext.length);
+      return this.nextEvent(randomNext[randomIndex]);
     }
-    return option.next;
   }
 
-  nextEvent = (option) => {
-    const nextEventName = this.getNextEventName(option);
+  nextEvent = (nextEventName) => {
     this.currentEvent = this.scenario[nextEventName];
     this.stimCount++;
 
@@ -126,7 +124,6 @@ const inGameScene = async (changeScene, sceneEngine) => {
   const gameSceneEngine = new GameSenario(sceneEngine.caracters, sceneEngine.scenarios, sceneEngine.deaths, changeScene);
 
   await gameSceneEngine.init();
-  
   gameSceneEngine.nextEvent(gameSceneEngine.currentEventName);
 }
 
