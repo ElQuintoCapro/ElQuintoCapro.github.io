@@ -15,6 +15,7 @@ const eventState = ({ currentEvent, ...event }) => {
   choices.map((choice) => {
     choice.target.querySelector("span").innerText = choice.object.value
     choice.target.addEventListener("click", () => {
+
       abortController.abort();
       if (choice.object.action?.updateScore)
         if (!event.updateScore(choice.object.action.updateScore))

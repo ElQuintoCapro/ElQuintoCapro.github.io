@@ -161,17 +161,223 @@
           },
           "welcomeIvan": {
             "type": "event",
-            "question": "<span Soy el bajista de la banda. Asegurate de mantener a la banda unida y que no haya malos rollos internos. Tambien tomate un respiro de vez en cuando con tu vida personal para que no te agobies.<span>",
+            "question": "<span>Soy el bajista de la banda. Asegurate de mantener a la banda unida y que no haya malos rollos internos. Tambien tomate un respiro de vez en cuando con tu vida personal para que no te agobies.<span>",
             "caracter": "ivan",
             "option1": {
               "value": "Nos harmeos usper colegas",
-              "randomNext": ["visitmiguelDialogue2", "opvisitmiguelDialogue3", "visitmiguel"]
+              "randomNext": ["ivan1", "ivan2", "alex1", "alex2", "miguel1", "miguel2", "lucas1", "lucas2"]
             },
             "option2": {
               "value": "Me lo tomare con calma",
-              "randomNext": ["visitmiguelDialogue2", "visitmiguelDialogue3", "visitmiguel"]
+              "randomNext": ["ivan1", "ivan2", "alex1", "alex2", "miguel1", "miguel2", "lucas1", "lucas2"]
             }
           },
+          "ivan1": {
+            "type": "event",
+            "question": "<span>Se me ha roto el ampli de bajo. Deberíamos comprar otro o tiramos por línea?<span>",
+            "caracter": "ivan",
+            "option1": {
+              "value": "Por linea",
+              "action": {
+                "updateScore": {
+                  "monrey": 12,
+                  "music": -8
+                }
+              },
+              "randomNext": ["ivan1", "ivan2", "alex1", "alex2", "miguel1", "miguel2", "lucas1", "lucas2"]
+            },
+            "option2": {
+              "value": "Comprar un ampli",
+              "action": {
+                "updateScore": {
+                  "music": 7,
+                  "money": -12
+                }
+              },
+              "randomNext": ["ivan1", "ivan2", "alex1", "alex2", "miguel1", "miguel2", "lucas1", "lucas2"]
+            }
+          },
+          "ivan2": {
+            "type": "event",
+            "question": "<span>SQueríamos ir a tomar algo mañana. ¿Te apuntas?<span>",
+            "caracter": "ivan",
+            "option1": {
+              "value": "Mañana curro",
+              "action": {
+                "updateScore": {
+                  "money": 12
+                }
+              },
+              "randomNext": ["ivan1", "ivan2", "alex1", "alex2", "miguel1", "miguel2", "lucas1", "lucas2"]
+            },
+            "option2": {
+              "value": "¡Vale! Me escaquearé del trabajo",
+              "action": {
+                "updateScore": {
+                  "heart": 7,
+                  "money": -7
+                }
+              },
+              "randomNext": ["ivan1", "ivan2", "alex1", "alex2", "miguel1", "miguel2", "lucas1", "lucas2"]
+            }
+          },
+
+          "alex1": {
+            "type": "event",
+            "question": "<span>Se me ha roto el bombo de la batería. ¿Compramos uno nuevo o lo arreglamos?<span>",
+            "caracter": "alex",
+            "option1": {
+              "value": "Lo arreglamos",
+              "action": {
+                "updateScore": {
+                  "money": -12,
+                  "music": 7
+                }
+              },
+              "randomNext": ["ivan1", "ivan2", "alex1", "alex2", "miguel1", "miguel2", "lucas1", "lucas2"]
+            },
+            "option2": {
+              "value": "Compramos uno nuevo",
+              "action": {
+                "updateScore": {
+                  "money": -12,
+                  "music": 7
+                }
+              },
+              "randomNext": ["ivan1", "ivan2", "alex1", "alex2", "miguel1", "miguel2", "lucas1", "lucas2"]
+            }
+          },
+
+          "alex2": {
+            "type": "event",
+            "question": "<span>¿Quieres ir a ver una peli de terror?<span>",
+            "caracter": "alex",
+            "option1": {
+              "value": "No, me cago",
+              "action": {
+                "updateScore": {
+                  "heart": -7,
+                  "money": 7
+                }
+              },
+              "randomNext": ["ivan1", "ivan2", "alex1", "alex2", "miguel1", "miguel2", "lucas1", "lucas2"]
+            },
+            "option2": {
+              "value": "¡Vamos!",
+              "action": {
+                "updateScore": {
+                  "heart": 7,
+                  "money": -7
+                }
+              },
+              "randomNext": ["ivan1", "ivan2", "alex1", "alex2", "miguel1", "miguel2", "lucas1", "lucas2"]
+            }
+          },
+
+          "miguel1": {
+            "type": "event",
+            "question": "<span>¿Quieres ir a ver una peli de terror?<span>",
+            "caracter": "miguel",
+            "option1": {
+              "value": "No, me cago",
+              "action": {
+                "updateScore": {
+                  "heart": -7,
+                  "money": 7
+                }
+              },
+              "randomNext": ["ivan1", "ivan2", "alex1", "alex2", "miguel1", "miguel2", "lucas1", "lucas2"]
+            },
+            "option2": {
+              "value": "¡Vamos!",
+              "action": {
+                "updateScore": {
+                  "heart": 7,
+                  "money": -7
+                }
+              },
+              "randomNext": ["ivan1", "ivan2", "alex1", "alex2", "miguel1", "miguel2", "lucas1", "lucas2"]
+            }
+          },
+
+          "miguel2": {
+            "type": "event",
+            "question": "<span>¿Quieres ir a ver una peli de terror?<span>",
+            "caracter": "miguel",
+            "option1": {
+              "value": "No, me cago",
+              "action": {
+                "updateScore": {
+                  "heart": -7,
+                  "money": 7
+                }
+              },
+              "randomNext": ["ivan1", "ivan2", "alex1", "alex2", "miguel1", "miguel2", "lucas1", "lucas2"]
+            },
+            "option2": {
+              "value": "¡Vamos!",
+              "action": {
+                "updateScore": {
+                  "heart": 7,
+                  "money": -7
+                }
+              },
+              "randomNext": ["ivan1", "ivan2", "alex1", "alex2", "miguel1", "miguel2", "lucas1", "lucas2"]
+            }
+          },
+
+          "lucas1": {
+            "type": "event",
+            "question": "<span>¿Quieres ir a ver una peli de terror?<span>",
+            "caracter": "lucas",
+            "option1": {
+              "value": "No, me cago",
+              "action": {
+                "updateScore": {
+                  "heart": -7,
+                  "money": 7
+                }
+              },
+              "randomNext": ["ivan1", "ivan2", "alex1", "alex2", "miguel1", "miguel2", "lucas1", "lucas2"]
+            },
+            "option2": {
+              "value": "¡Vamos!",
+              "action": {
+                "updateScore": {
+                  "heart": 7,
+                  "money": -7
+                }
+              },
+              "randomNext": ["ivan1", "ivan2", "alex1", "alex2", "miguel1", "miguel2", "lucas1", "lucas2"]
+            }
+          },
+
+          "lucas2": {
+            "type": "event",
+            "question": "<span>¿Quieres ir a ver una peli de terror?<span>",
+            "caracter": "lucas",
+            "option1": {
+              "value": "No, me cago",
+              "action": {
+                "updateScore": {
+                  "heart": -7,
+                  "money": 7
+                }
+              },
+              "randomNext": ["ivan1", "ivan2", "alex1", "alex2", "miguel1", "miguel2", "lucas1", "lucas2"]
+            },
+            "option2": {
+              "value": "¡Vamos!",
+              "action": {
+                "updateScore": {
+                  "heart": 7,
+                  "money": -7
+                }
+              },
+              "randomNext": ["ivan1", "ivan2", "alex1", "alex2", "miguel1", "miguel2", "lucas1", "lucas2"]
+            }
+          },
+
           "visitmiguelDialogue2": {
             "type": "info",
             "question": "<span class=\"tiny-description\">Enhorabuena quinto capro!, <br/><br/>La gira ha sido todo un exito y tenemos pasta! que hacer con tanto dinero?<span>",
@@ -188,32 +394,6 @@
             "option": {
               "value": "Drogas y alcohol",
               "next": "visitmiguel"
-            }
-          },
-          "visitmiguel": {
-            "type": "event",
-            "question": "<span class=\"small-description\">Estas jodido<span>",
-            "caracter": "miguel",
-            "option1": {
-              "value": "Si",
-              "action": {
-                "updateScore": {
-                  "army": 10,
-                  "noble": 10,
-                  "money": -10
-                }
-              },
-              "next": "armyNeedSolider"
-            },
-            "option2": {
-              "value": "No",
-              "action": {
-                "updateScore": {
-                  "noble": -15,
-                  "money": 0
-                }
-              },
-              "next": "armyNeedSolider"
             }
           },
           "armyNeedSolider": {
