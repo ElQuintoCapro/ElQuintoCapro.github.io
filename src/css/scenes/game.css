@@ -30,7 +30,7 @@
 }
 
 #game__card__header {
-  background-color: var(--brown);
+  background-color: var(--gold);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,14 +40,16 @@
 }
 
 #game__question {
-  color: var(--gold)
+  color: var(--brown)
 }
 
 #game__caracter_card {
+  max-width: 350px; 
+  max-height: 350px;
   background-color: #1C2F53;
   border-radius: 25px;
   padding-bottom: 0;
-  height: 100%;
+  width: 90%;
   margin: 0 20px;
   aspect-ratio: 1/1;
   margin-top: 40px;
