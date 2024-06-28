@@ -28,7 +28,7 @@
         "ivan": {
           "color": "#82B544",
           "name": "ivan",
-          "picture": "<img src=\"./public/images/caracters/ivan.jpg\" style=\"top: 0; height: 100%\" />"
+          "picture": "<img src=\"./public/images/caracters/ivan.jpg\" style=\"bottom: 0; height: 100%\" />"
         },
         "producer": {
           "color": "#245EA7",
