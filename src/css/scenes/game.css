@@ -48,6 +48,7 @@
 #game__caracter_card {
   max-width: 350px; 
   max-height: 350px;
+  width: 90%;
   background-color: #1C2F53;
   border-radius: 25px;
   padding-bottom: 0;
