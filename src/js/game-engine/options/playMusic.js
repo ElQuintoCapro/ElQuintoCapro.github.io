@@ -10,10 +10,11 @@ const playAudio = (music, id) => {
   document.getElementsByTagName("audio").item(0)?.remove();
 
   var audio = document.createElement("AUDIO");
-
+  
   audio.id = id;
   document.getElementsByTagName("body").item(0).appendChild(audio);
   audio.src = music;
+  audio.volume = 0.5;
 
   audio.addEventListener("ended", function () {
     this.currentTime = 0;
